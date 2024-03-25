@@ -1,0 +1,8 @@
+em arquivos ejs da pra escrever em js puro dentro das tags html.
+Mas para isso é preciso icluir o script dentro das chaves:
+
+<% controle de fluxo (if, for, ...) %>
+<%= Imprime escapando caracteres(se vier coisa html junto nao vai ser ler o html)%>
+<%- Imprime sem escapar caracteras (le o html que vier junto com uma string por ex) %>
+<%# comentário/coment%>
+<%- include('caminho do arquivo/...'); %>

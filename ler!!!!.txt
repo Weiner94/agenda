@@ -1,0 +1,31 @@
+NOTA: BAIXAR PASTA NODE
+npm install
+
+obs: nao esquecer de mudar "name" do projeto em package.json
+
+SRC==> backend (poderia se chamar backend tambem)
+
+/* 
+https://site.com/ --> navegador esta fazendo um GET/ler--> entregue a pagina --> express é responsavel por saber qual a rota e entregar 
+https://site.com/sobre --> nav pede(get) a pagina sobre...
+        criar    ler     atualizar  apagar
+CRUD--> CREATE   READ    UPDATE     DELETE 
+        POST     GET     PUT        DELETE
+*/
+
+/*  req.params --> parametros /testes/123/456
+    req.query  --> dados na query string /testes/?chave1=123&chave2=456 oou /testes/parametro?chave1=123&chave2=456
+    req.body   --> dados vem ao fazer um POST (quase sempre de um form) -> rota precisa ser tratada (ver linhas 12 e 13)
+*/ 
+
+
+
+
+OBS:
+
+Helmet no localhost (EVITE)
+O Helmet é para segurança da aplicação, portanto, caso você esteja com um sistema ainda em desenvolvimento, usando urls como "127.0.0.1", "localhost" ou até um servidor com IP externo, sem usar SSL (https), é recomendável desativá-lo. Ele pode bloquear importação de scripts e arquivos de CSS.
+
+Caso ocorra erros ao importar o bundle.js, arquivos de CDN (como bootstrap, por exemplo) ou CSS, basta desativar o helmet para correção.
+
+Isso só ocorrerá em sistemas sem SSL (sem https na URL).

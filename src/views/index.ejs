@@ -1,0 +1,61 @@
+<%- include('includes/head')%>
+  <%- include('includes/nav')%>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <!-- conteudo: -->
+        <div class="col-lg-8 my-3">
+          <h1 class="text-center">AGENDA</h1>
+
+          <%- include('includes/messages');%>
+            <% console.log(userGlobal.user); if( userGlobal.user===undefined) {%>
+              <p class="text-center lead">Faça Login para adicionar Contatos</p>
+              <%}else{%>
+                <% if(contatos.length> 0){%>
+                  <p class="text-center lead">Seus contatos estão abaixo</p>
+                  <div class="resposive-table">
+                    <table class="table table-striped my-3">
+                      <tr>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <% contatos.forEach(contato=> {%>
+                        <tr>
+                          <td>
+                            <%= contato.nome%>
+                          </td>
+                          <td>
+                            <%= contato.sobrenome%>
+                          </td>
+                          <td>
+                            <%= contato.email%>
+                          </td>
+                          <td>
+                            <%= contato.telefone%>
+                          </td>
+                          <td><a href="/contato/index/<%= contato._id%>">Editar</td>
+                          <td><a href="/contato/delete/<%= contato._id%>" class="text-danger">Excluir</td>
+                        </tr>
+                        <%}) %>
+                          <%}else{%>
+                            <p class="text-center lead">Não existem contatos cadastrasdos ainda</p>
+                <%}%>
+             <%}%>
+
+                    </table>
+                  </div>
+
+        </div>
+
+        <div class="col-lg-2"></div>
+
+      </div>
+    </div>
+
+
+    <%- include('includes/footer')%>
