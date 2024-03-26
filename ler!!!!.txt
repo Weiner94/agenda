@@ -1,7 +1,13 @@
 NOTA: BAIXAR PASTA NODE
 npm install
 
+NÃO ESQUECER: 
+Adicionar arquivo .env com CONNECTIONSTRING = <caminho do cluster mongo db>
+e SESSION_SECRET=weinerrogerio
+
 obs: nao esquecer de mudar "name" do projeto em package.json
+
+
 
 SRC==> backend (poderia se chamar backend tambem)
 
