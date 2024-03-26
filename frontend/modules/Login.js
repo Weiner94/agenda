@@ -12,7 +12,7 @@ export default class Login {
         if (!this.form) return
         this.form.addEventListener('submit', e => {
             e.preventDefault()
-            console.log('form nao enviado');
+            console.log('form nao enviado');//controle debug
             this.validate(e)
         })
     }
@@ -20,8 +20,10 @@ export default class Login {
         const el = e.target;
         const emailInput = el.querySelector('input[name="email"]')
         const passwordInput = el.querySelector('input[name="password"]')
-        console.log(emailInput.value, passwordInput.value);
+
         let error = false
+        
+        //NOTA: adaptar alert para algo mais elaborado
         if (!validator.isEmail(emailInput.value)) {
             // aqui pode ter algo mais elaborado do que um alert
             alert('Email inválido')
